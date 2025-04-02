@@ -1,174 +1,329 @@
+<a id="readme-top"></a>
 
-# 📦 API Administrateur E-commerce (GameXpress)
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## 🚀 Introduction
-Cette API d'administration pour une plateforme e-commerce (GameXpress) est développée avec **Laravel 11**. Elle constitue la première phase d'un backend qui s'étend sur **trois semaines**.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-## 🛠️ Technologies Utilisées
-- **Framework** : Laravel 11 && PHP 8.3
-- **Authentification** : Laravel Sanctum
-- **Gestion des rôles et permissions** : Spatie Permission
-- **Tests** : Pest PHP ou unitTest
-- **Base de données** : MySQL
-- **Documentation API** : Swagger
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## 📐 Architecture
-L'API suit une architecture **RESTful** avec :
-- 📌 **Versionnement** : `v1`
-- ✅ **Structure de réponse cohérente**
-- 🔐 **Authentification par token** (Sanctum)
-- 🛡️ **Gestion des permissions** avec Spatie
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/issam-mhj/gamestore_api_v2">
+    <img src="https://github.com/user-attachments/assets/0ae1b6d5-1a62-4b41-b2c7-c595a0460497" alt="Logo" width="80" height="80">
+  </a>
 
----
+<h3 align="center">GameXpress API</h3>
 
-## 🔗 Endpoints Principaux
+  <p align="center">
+    An administrative API for an e-commerce platform (GameXpress), built with Laravel 11, providing RESTful endpoints for managing products, categories, users, orders, and payments.
+    <br />
+    <a href="https://github.com/issam-mhj/gamestore_api_v2"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/issam-mhj/gamestore_api_v2">View Demo</a>
+    &middot;
+    <a href="https://github.com/issam-mhj/gamestore_api_v2/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/issam-mhj/gamestore_api_v2/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-### 🔑 1. Authentification Administrateur
-- 🔹 **Inscription** : `POST /api/v1/admin/register`
-- 🔹 **Connexion** : `POST /api/v1/admin/login`
-- 🔹 **Déconnexion** : `POST /api/v1/admin/logout`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### 📊 2. Tableau de Bord
-- 📈 **Statistiques** : `GET /api/v1/admin/dashboard`
-- 🏷️ **Notification** :  Je souhaite recevoir des notifications par email pour les stocks critiques.
+<!-- ABOUT THE PROJECT -->
 
-### 🛍️ 3. Gestion des Produits
-- 📜 **Lister** : `GET /api/v1/admin/products`
-- 🔍 **Voir un produit** : `GET /api/v1/admin/products/{id}`
-- ➕ **Créer** : `POST /api/v1/admin/products`
-- ✏️ **Modifier** : `PUT /api/v1/admin/products/{id}`
-- ❌ **Supprimer** : `DELETE /api/v1/admin/products/{id}`
+## About The Project
 
-### 🗂️ 4. Gestion des Catégories
-- 📜 **Lister** : `GET /api/v1/admin/categories`
-- ➕ **Créer** : `POST /api/v1/admin/categories`
-- ✏️ **Modifier** : `PUT /api/v1/admin/categories/{id}`
-- ❌ **Supprimer** : `DELETE /api/v1/admin/categories/{id}`
+The GameXpress API is a Laravel 11-based backend designed to manage an e-commerce platform, focusing on administrator functionalities. It provides a RESTful API for managing products, categories, users, orders, and payments. Authentication is handled using Laravel Sanctum, and role-based access control is implemented with Spatie Permission.
 
-### 👥 5. Gestion des Utilisateurs
-- 📜 **Lister** : `GET /api/v1/admin/users`
-- ➕ **Créer** : `POST /api/v1/admin/users`
-- ✏️ **Modifier** : `PUT /api/v1/admin/users/{id}`
-- ❌ **Supprimer** : `DELETE /api/v1/admin/users/{id}`
+[![Product Name Screen Shot][product-screenshot]](https://github.com/user-attachments/assets/721b7fb3-e480-4809-9023-fd48b82b1f8c)
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🗄️ Modèles de Données
+### Built With
 
-### 👤 1. Utilisateur (`users`)
-| Champ              | Type         | Description |
-|--------------------|-------------|-------------|
-| `id`              | int         | Identifiant unique |
-| `name`            | string      | Nom de l'utilisateur |
-| `email`           | string      | Adresse e-mail |
-| `password`        | string      | Mot de passe |
-| `email_verified_at` | timestamp | Vérification e-mail |
-| `remember_token`  | string      | Jeton de session |
-| `timestamps`      | timestamp   | Dates de création et mise à jour |
-| `deleted_at`      | timestamp   | Suppression (soft delete) |
+*   [Laravel 11](https://laravel.com/)
+*   [PHP 8.2+](https://www.php.net/)
+*   [MySQL](https://www.mysql.com/)
+*   [Laravel Sanctum](https://laravel.com/docs/11.x/sanctum)
+*   [Spatie Permission](https://spatie.be/docs/laravel-permission/v6/introduction)
+*   [Stripe PHP](https://stripe.com/docs/libraries#php)
 
-### 🏷️ 2. Catégorie (`categories`)
-| Champ       | Type     | Description |
-|------------|---------|-------------|
-| `id`       | int     | Identifiant unique |
-| `name`     | string  | Nom de la catégorie |
-| `slug`     | string  | Identifiant URL-friendly |
-| `parent_id` | int    | Catégorie parente (si applicable) |
-| `timestamps` | timestamp | Dates de création et mise à jour |
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 🏷️ 3. Produit (`products`)
-| Champ      | Type     | Description |
-|------------|---------|-------------|
-| `id`       | int     | Identifiant unique |
-| `name`     | string  | Nom du produit |
-| `slug`     | string  | Identifiant URL-friendly |
-| `price`    | decimal | Prix du produit |
-| `stock`    | int     | Quantité en stock |
-| `status`   | string  | État du produit (disponible, en rupture) |
-| `category_id` | int  | Catégorie associée |
-| `timestamps` | timestamp | Dates de création et mise à jour |
-| `deleted_at` | timestamp | Suppression (soft delete) |
+<!-- GETTING STARTED -->
 
-### 🖼️ 4. Image Produit (`product_images`)
-| Champ       | Type     | Description |
-|------------|---------|-------------|
-| `id`       | int     | Identifiant unique |
-| `product_id` | int   | Produit associé |
-| `image_url` | string | Lien de l'image |
-| `is_primary` | bool  | Image principale (true/false) |
-| `timestamps` | timestamp | Dates de création et mise à jour |
+## Getting Started
 
----
+To get a local copy up and running, follow these steps.
 
-## 🛡️ Gestion des Rôles et Permissions
+### Prerequisites
 
-### 🎭 Rôles
-- 👑 `super_admin`
-- 🛍️ `product_manager`
-- 👥 `user_manager`
+*   PHP >= 8.2
+*   Composer
+*   MySQL
+*   Node.js and npm (for Vite)
 
-### 🔑 Permissions
-- 📊 `view_dashboard`
-- 🛍️ `view_products`, `create_products`, `edit_products`, `delete_products`
-- 🗂️ `view_categories`, `create_categories`, `edit_categories`, `delete_categories`
-- 👥 `view_users`, `create_users`, `edit_users`, `delete_users`
+### Installation
 
----
+1.  Clone the repository:
 
-## 🧪 Plan de Tests
-- ✅ Tests **unitaires** pour chaque endpoint
-- ✅ Tests **de validation** des rôles et permissions
-- ✅ Tests **de performance** sur les endpoints critiques
+    ```sh
+    git clone https://github.com/issam-mhj/gamestore_api_v2.git
+    cd issam-mhj-gamestore_api_v2
+    ```
 
----
+2.  Install Composer dependencies:
 
-## 📂 Organisation du Code
-```
-📂 app
- ├── 📁 Http
- │   ├── 📂 Controllers
- │   │   └── 📂 Api/V1/Admin
- │   ├── 📂 Requests
- │   ├── 📂 Resources
- ├── 📁 Models
- ├── 📁 Middleware
- ├── 📂 routes
- │   ├── api.php
- ├── 📂 tests
- │   ├── Feature/Api/V1/Admin
-```
+    ```sh
+    composer install
+    ```
 
----
+3.  Copy the `.env.example` file to `.env` and configure your database connection:
 
-## 📅 Planning de Développement (Semaine 1)
+    ```sh
+    cp .env.example .env
+    ```
 
-### 📆 **Jour 1**
-✅ Initialisation du projet Laravel 11  
-✅ Configuration de **Sanctum** et **Spatie**  
-✅ Mise en place de la **structure API**  
+    Edit the `.env` file to set your database credentials:
 
-### 📆 **Jour 2**
-✅ Implémentation de l'**authentification** (`register`, `login`, `logout`)  
-✅ Configuration des **rôles et permissions**  
-✅ Développement du **tableau de bord**  
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_database_username
+    DB_PASSWORD=your_database_password
+    ```
 
-### 📆 **Jour 3**
-✅ Développement des **endpoints produits**  
-✅ Écriture des **tests unitaires**  
+4.  Generate an application key:
 
-### 📆 **Jour 4**
-✅ Développement des **endpoints catégories **  
-✅ Écriture des **tests unitaires**  
+    ```sh
+    php artisan key:generate
+    ```
 
-### 📆 **Jour 5**
-✅ Développement des **endpoints catégories & utilisateurs**  
-✅ Finalisation des **tests et documentation API**  
+5.  Run database migrations and seed the database:
 
-### 📤 Exporter les Endpoints
-1. Ouvrez **Postman**
-2. Sélectionnez la **collection** contenant vos endpoints
-3. Cliquez sur les trois points **(...)** puis sur **Exporter**
-4. Choisissez le format **JSON** et cliquez sur **Exporter**
-5. Enregistrez le fichier pour le partager ou le rendue
+    ```sh
+    php artisan migrate --seed
+    ```
 
+6.  Install npm dependencies:
 
+    ```sh
+    npm install
+    ```
+
+7.  Compile assets with Vite:
+
+    ```sh
+    npm run dev
+    ```
+
+8.  Serve the application:
+
+    ```sh
+    php artisan serve
+    ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+The API provides the following main endpoints:
+
+*   **Authentication:**
+    *   `POST /api/register`: Register a new user.
+    *   `POST /api/login`: Log in an existing user.
+    *   `POST /api/logout`: Log out the authenticated user.
+
+*   **Admin Dashboard (requires `view_dashboard` permission):**
+    *   `GET /api/v1/admin/dashboard`: Retrieve dashboard statistics.
+
+*   **Product Management (requires `view_products`, `create_products`, `edit_products`, `delete_products` permissions):**
+    *   `GET /api/products`: List all products.
+    *   `POST /api/products`: Create a new product.
+    *   `GET /api/products/{product}`: Retrieve a specific product.
+    *   `PUT /api/products/{product}`: Update a product.
+    *   `DELETE /api/products/{product}`: Delete a product (soft delete).
+    *   `POST /api/products/{product}/restore`: Restore a soft-deleted product.
+    *   `DELETE /api/products/{product}/hard-delete`: Permanently delete a product.
+
+*   **Category Management (requires `view_categories`, `create_categories`, `edit_categories`, `delete_categories` permissions):**
+    *   `GET /api/v1/admin/categories`: List all categories.
+    *   `POST /api/v1/admin/categories`: Create a new category.
+    *   `PUT /api/v1/admin/categories/{category}`: Update a category.
+    *   `DELETE /api/v1/admin/categories/{category}`: Delete a category.
+
+*   **User Management (requires `view_users`, `create_users`, `edit_users`, `delete_users` permissions):**
+    *   `GET /api/v1/admin/users`: List all users.
+    *   `POST /api/v1/admin/users`: Create a new user.
+    *   `PUT /api/v1/admin/users/{user}`: Update a user.
+    *   `DELETE /api/v1/admin/users/{user}`: Delete a user.
+
+*   **Order Management (requires `view_users` permission):**
+    *   `GET /api/v1/admin/orders`: List all orders.
+    *   `GET /api/v1/admin/orders/{id}`: Show a specific order.
+    *   `DELETE /api/v1/admin/orders/{id}`: Cancel an order.
+    *   `PUT /api/v1/admin/orders/{id}/status`: Update the status of an order.
+
+*   **Payment Management (requires `view_users` permission):**
+    *   `GET /api/v1/admin/payments`: List all payments.
+
+*   **Roles Management (requires `edit_users` permission):**
+    *   `GET /api/roles`: List all roles.
+    *   `POST /api/roles/create`: Create a new role.
+    *   `GET /api/roles/{id}`: Show a specific role.
+    *   `PUT /api/roles/edit/{id}`: Update a role.
+    *   `DELETE /api/roles/delete/{id}`: Delete a role.
+    *   `POST /api/assign-roles`: Assign roles to a user.
+    *   `GET /api/users/{id}/roles`: Get roles of a specific user.
+
+*   **Cart Management:**
+    *   `POST /api/v2/cart/add`: Add an item to the cart.
+    *   `POST /api/v2/cart/update`: Update an item in the cart.
+    *   `DELETE /api/v2/cart/remove/{CartItem}`: Remove an item from the cart.
+    *   `POST /api/v2/cart/clear`: Clear the cart.
+    *   `GET /api/v2/cart/items`: Get all items in the cart.
+
+*   **Checkout:**
+    *   `POST /api/checkout`: Initiate the checkout process (requires authentication).
+    *   `GET /api/success`: Success URL for Stripe checkout.
+    *   `GET /api/cancel`: Cancel URL for Stripe checkout.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+*   Implement Swagger documentation for API endpoints.
+*   Add more comprehensive unit and feature tests.
+*   Implement advanced search and filtering options for products and users.
+*   Implement queue for sending notifications.
+
+See the [open issues](https://github.com/issam-mhj/gamestore_api_v2/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Top contributors:
+
+<a href="https://github.com/issam-mhj/gamestore_api_v2/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=issam-mhj/gamestore_api_v2" alt="contrib.rocks image" />
+</a>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Issam Mhj - [issam.mhj@email.com](mailto:issam.mhj@email.com)
+
+Project Link: [https://github.com/issam-mhj/gamestore_api_v2](https://github.com/issam-mhj/gamestore_api_v2)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+*   Laravel Documentation
+*   Spatie Permission Package
+*   Stripe PHP Library
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/issam-mhj/gamestore_api_v2.svg?style=for-the-badge
+[contributors-url]: https://github.com/issam-mhj/gamestore_api_v2/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/issam-mhj/gamestore_api_v2.svg?style=for-the-badge
+[forks-url]: https://github.com/issam-mhj/gamestore_api_v2/network/members
+[stars-shield]: https://img.shields.io/github/stars/issam-mhj/gamestore_api_v2.svg?style=for-the-badge
+[stars-url]: https://github.com/issam-mhj/gamestore_api_v2/stargazers
+[issues-shield]: https://img.shields.io/github/issues/issam-mhj/gamestore_api_v2.svg?style=for-the-badge
+[issues-url]: https://github.com/issam-mhj/gamestore_api_v2/issues
+[license-shield]: https://img.shields.io/github/license/issam-mhj/gamestore_api_v2.svg?style=for-the-badge
+[license-url]: https://github.com/issam-mhj/gamestore_api_v2/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: https://github.com/user-attachments/assets/721b7fb3-e480-4809-9023-fd48b82b1f8c
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3
